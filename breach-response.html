@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="You've Been Breached — What to Do in the First 72 Hours. 5-phase incident response guide + printable checklist. Attorney-ready email swipe files. $27 instant download.">
+<title>You've Been Breached — What to Do in the First 72 Hours — INeedACISO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4448608065416215');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4448608065416215&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, sans-serif; background: #FAFBFC; color: #1A202C; line-height: 1.6; font-size: 16px; }
+:root {
+  --slate:      #1E2A38;
+  --slate-deep: #141E28;
+  --blue:       #2D7DD2;
+  --blue-light: #EBF4FF;
+  --blue-dim:   #7FB3D3;
+  --rule:       #CBD5E0;
+  --text:       #1A202C;
+  --text-mid:   #4A5568;
+  --text-light: #718096;
+  --white:      #ffffff;
+  --bg:         #FAFBFC;
+  --radius:     6px;
+  --red:        #C53030;
+  --red-light:  #FFF5F5;
+}
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+.container { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+.nav { background: var(--white); border-bottom: 1px solid var(--rule); padding: 0 24px; }
+.nav__inner { max-width: 680px; margin: 0 auto; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+.wordmark { display: inline-flex; align-items: center; }
+.wordmark__bar { width: 4px; height: 20px; background: var(--blue); border-radius: 2px; margin-right: 6px; }
+.wordmark__i { color: var(--blue); font-size: 16px; font-weight: 700; }
+.wordmark__rest { color: var(--slate); font-size: 16px; font-weight: 700; }
+.nav__back { font-size: 13px; color: var(--text-light); transition: color .15s; }
+.nav__back:hover { color: var(--slate); }
+
+/* Red-accented hero for urgency */
+.hero { background: var(--slate); padding: 56px 24px 48px; border-left: 8px solid var(--red); position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 90% 50%, rgba(197,48,48,.12) 0%, transparent 70%); pointer-events: none; }
+.hero .container { position: relative; }
+.hero__eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 1.4px; text-transform: uppercase; color: #FC8181; margin-bottom: 16px; }
+.hero__title { font-family: 'DM Serif Display', serif; font-size: clamp(30px, 5vw, 48px); color: var(--white); line-height: 1.12; margin-bottom: 16px; }
+.hero__title em { font-style: italic; color: #FC8181; }
+.hero__sub { font-size: 17px; color: var(--blue-dim); line-height: 1.65; margin-bottom: 28px; font-weight: 300; }
+.hero__urgency { background: rgba(197,48,48,.2); border: 1px solid rgba(197,48,48,.4); border-radius: var(--radius); padding: 14px 18px; margin-bottom: 28px; font-size: 14px; color: #FC8181; line-height: 1.5; }
+.hero__urgency strong { color: var(--white); }
+.hero__price { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+.hero__price-was { font-size: 18px; color: var(--text-light); text-decoration: line-through; }
+.hero__price-now { font-size: 48px; font-weight: 800; color: var(--white); letter-spacing: -2px; }
+.hero__price-note { font-size: 13px; color: var(--blue-dim); margin-bottom: 24px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 700; padding: 15px 32px; border-radius: var(--radius); transition: all .15s; cursor: pointer; border: none; font-family: inherit; }
+.btn--primary { background: var(--blue); color: var(--white); }
+.btn--primary:hover { background: #2268b8; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(45,125,210,.4); }
+.btn--red { background: var(--red); color: var(--white); }
+.btn--red:hover { background: #9B2C2C; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(197,48,48,.4); }
+.btn--full { width: 100%; justify-content: center; }
+.hero__guarantee { font-size: 12px; color: var(--blue-dim); margin-top: 12px; opacity: .8; }
+
+.trust { background: var(--slate-deep); padding: 14px 24px; border-bottom: 1px solid rgba(255,255,255,.06); }
+.trust__inner { max-width: 680px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; }
+.trust__item { font-size: 12px; font-weight: 500; color: var(--blue-dim); letter-spacing: .3px; }
+
+.section { padding: 56px 0; }
+.section--alt { background: var(--white); }
+.section__eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 1.4px; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+.section__title { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 3.5vw, 34px); color: var(--slate); line-height: 1.2; margin-bottom: 16px; }
+.section__title em { font-style: italic; color: var(--blue); }
+.section__body { font-size: 16px; color: var(--text-mid); line-height: 1.7; margin-bottom: 24px; }
+
+/* Timeline phases */
+.phases { display: flex; flex-direction: column; gap: 0; margin: 24px 0; position: relative; }
+.phases::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 2px; background: var(--rule); }
+.phase { display: flex; gap: 20px; padding-bottom: 24px; position: relative; }
+.phase:last-child { padding-bottom: 0; }
+.phase__marker { width: 42px; height: 42px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 12px; font-weight: 800; color: var(--white); z-index: 1; }
+.phase__content { flex: 1; padding-top: 8px; }
+.phase__time { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--blue); margin-bottom: 4px; }
+.phase__title { font-weight: 700; font-size: 16px; color: var(--slate); margin-bottom: 4px; }
+.phase__desc { font-size: 14px; color: var(--text-mid); line-height: 1.5; }
+
+.features { display: flex; flex-direction: column; gap: 10px; margin: 24px 0; }
+.feature { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; background: var(--bg); border: 1px solid var(--rule); border-radius: var(--radius); border-left: 4px solid var(--blue); }
+.feature__check { width: 22px; height: 22px; background: var(--blue-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; font-size: 11px; color: var(--blue); font-weight: 700; }
+.feature__text { font-size: 15px; color: var(--text); line-height: 1.5; }
+.feature__text strong { color: var(--slate); }
+
+/* What's included split */
+.bundle { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+.bundle__item { background: var(--bg); border: 1px solid var(--rule); border-radius: var(--radius); padding: 20px; }
+.bundle__label { font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; }
+.bundle__title { font-weight: 700; font-size: 15px; color: var(--slate); margin-bottom: 10px; line-height: 1.3; }
+.bundle__features { display: flex; flex-direction: column; gap: 6px; }
+.bundle__feature { font-size: 13px; color: var(--text-mid); display: flex; gap: 8px; }
+.bundle__feature::before { content: '✓'; color: var(--blue); font-weight: 700; flex-shrink: 0; }
+
+/* stat row */
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border-radius: 8px; overflow: hidden; margin: 28px 0; }
+.stat { background: var(--white); padding: 20px 16px; text-align: center; }
+.stat__num { font-family: 'DM Serif Display', serif; font-size: 32px; color: var(--slate); line-height: 1; margin-bottom: 4px; }
+.stat__num span { color: var(--blue); }
+.stat__label { font-size: 12px; color: var(--text-light); line-height: 1.4; }
+
+.authority { background: var(--slate-deep); border-radius: 8px; padding: 32px; margin: 32px 0; }
+.authority__creds { display: flex; flex-direction: column; gap: 14px; }
+.authority__cred { display: flex; gap: 12px; font-size: 14px; color: var(--blue-dim); line-height: 1.5; }
+.authority__bar { width: 3px; min-height: 36px; background: var(--blue); border-radius: 2px; flex-shrink: 0; }
+
+.cta-section { background: var(--slate); padding: 56px 24px; text-align: center; border-top: 4px solid var(--red); }
+.cta-section__title { font-family: 'DM Serif Display', serif; font-size: clamp(26px, 4vw, 36px); color: var(--white); margin-bottom: 12px; }
+.cta-section__sub { font-size: 16px; color: var(--blue-dim); margin-bottom: 32px; line-height: 1.6; }
+
+.faq { display: flex; flex-direction: column; gap: 1px; background: var(--rule); border-radius: 8px; overflow: hidden; margin: 24px 0; }
+.faq__item { background: var(--white); }
+.faq__q { width: 100%; padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 15px; font-weight: 600; color: var(--slate); background: none; border: none; cursor: pointer; text-align: left; font-family: inherit; transition: background .15s; }
+.faq__q:hover { background: var(--bg); }
+.faq__icon { width: 22px; height: 22px; background: var(--blue-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background .15s, transform .2s; font-size: 14px; color: var(--blue); font-weight: 700; }
+.faq__item.open .faq__icon { background: var(--blue); color: white; transform: rotate(45deg); }
+.faq__a { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .3s ease; font-size: 14.5px; color: var(--text-mid); line-height: 1.7; }
+.faq__item.open .faq__a { max-height: 300px; padding: 0 20px 18px; }
+
+.footer { background: var(--slate-deep); padding: 28px 24px; text-align: center; border-top: 1px solid rgba(255,255,255,.06); }
+.footer__copy { font-size: 12px; color: rgba(127,179,211,.5); }
+.footer__links { display: flex; gap: 20px; justify-content: center; margin-bottom: 10px; flex-wrap: wrap; }
+.footer__link { font-size: 12px; color: rgba(127,179,211,.6); transition: color .15s; }
+.footer__link:hover { color: var(--white); }
+
+@media (max-width: 600px) {
+  .bundle { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(3, 1fr); }
+  .hero__price-now { font-size: 40px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="wordmark">
+      <div class="wordmark__bar"></div>
+      <span class="wordmark__i">I</span><span class="wordmark__rest">NeedACISO</span>
+    </a>
+    <a href="/" class="nav__back">← All Products</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__eyebrow">Emergency Response Guide + Checklist · Instant Download</div>
+    <h1 class="hero__title">You've Been Breached.<br><em>Now what?</em></h1>
+    <p class="hero__sub">The decisions you make in the first 72 hours after a breach determine how bad it gets — legally, financially, and reputationally. This guide tells you exactly what to do, in what order, before panic sets in.</p>
+    <div class="hero__urgency">
+      <strong>If you're reading this because something just happened</strong> — skip to the purchase button below. You need this now, not after reading the whole page.
+    </div>
+    <div class="hero__price">
+      <span class="hero__price-was">$47</span>
+      <span class="hero__price-now">$27</span>
+    </div>
+    <p class="hero__price-note">Guide + Checklist bundle · One-time purchase · Instant PDF download</p>
+    <a href="https://ineedaciso.gumroad.com/l/breached" class="btn btn--primary btn--full">Get the Bundle — $27 →</a>
+    <p class="hero__guarantee">🔒 Secure checkout · 7-day money-back guarantee · No subscription</p>
+  </div>
+</section>
+
+<!-- ── TRUST ── -->
+<div class="trust">
+  <div class="trust__inner">
+    <span class="trust__item">Nearly 30 Years Experience</span>
+    <span class="trust__item">CISSP · CISA · GSLC</span>
+    <span class="trust__item">Guided breaches to secure in under 4 hours</span>
+    <span class="trust__item">US Marine Corps Veteran</span>
+  </div>
+</div>
+
+<!-- ── TIMELINE ── -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__eyebrow">Five Phases</div>
+    <h2 class="section__title">Hour 1 through Hour 72. <em>Every step covered.</em></h2>
+    <p class="section__body">Most businesses fail in a breach not because they lack technical skills — but because nobody has ever told them what to do first, second, and third when the pressure is on.</p>
+    <div class="phases">
+      <div class="phase">
+        <div class="phase__marker">1</div>
+        <div class="phase__content">
+          <div class="phase__time">Hour 1</div>
+          <div class="phase__title">Contain — Stop the bleeding</div>
+          <div class="phase__desc">Isolate affected systems, preserve evidence, make the first critical calls. What to do — and critically, what NOT to do — in the first 60 minutes.</div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase__marker">2</div>
+        <div class="phase__content">
+          <div class="phase__time">Hours 2–8</div>
+          <div class="phase__title">Assess — Understand what happened</div>
+          <div class="phase__desc">Determine scope, engage legal counsel, notify your cyber insurance carrier. The sequence matters — doing this out of order can cost you coverage.</div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase__marker">3</div>
+        <div class="phase__content">
+          <div class="phase__time">Hours 8–24</div>
+          <div class="phase__title">Notify — Who to tell and when</div>
+          <div class="phase__desc">Regulatory notification timelines by framework — GDPR's 72-hour window, HIPAA's requirements, state breach laws. Missing these deadlines multiplies your exposure.</div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase__marker">4</div>
+        <div class="phase__content">
+          <div class="phase__time">Hours 24–48</div>
+          <div class="phase__title">Communicate — What to say and how</div>
+          <div class="phase__desc">Three attorney-reviewed email templates — one for customers, one for vendors, one for employees. What to say, what to avoid, and how to say it without creating additional legal exposure.</div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase__marker">5</div>
+        <div class="phase__content">
+          <div class="phase__time">Hours 48–72</div>
+          <div class="phase__title">Recover — Getting back to business</div>
+          <div class="phase__desc">System restoration sequence, credential rotation, documentation requirements for insurance and regulatory purposes. How to close out the incident properly.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS ── -->
+<section class="section">
+  <div class="container">
+    <div class="stats">
+      <div class="stat"><div class="stat__num">72<span>hr</span></div><div class="stat__label">GDPR regulatory notification deadline</div></div>
+      <div class="stat"><div class="stat__num">$120<span>K</span></div><div class="stat__label">Average small business breach cost</div></div>
+      <div class="stat"><div class="stat__num">40<span>%</span></div><div class="stat__label">Of breached small businesses never reopen</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT'S INCLUDED ── -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__eyebrow">What's Included</div>
+    <h2 class="section__title">Two documents. <em>One bundle.</em></h2>
+    <p class="section__body">Print the checklist before you need it. Read the guide after. Both are included in your instant download.</p>
+    <div class="bundle">
+      <div class="bundle__item">
+        <div class="bundle__label">Guide</div>
+        <div class="bundle__title">You've Been Breached — What to Do in the First 72 Hours</div>
+        <div class="bundle__features">
+          <div class="bundle__feature">5-phase response protocol</div>
+          <div class="bundle__feature">Who to call and in what order</div>
+          <div class="bundle__feature">What NOT to say publicly</div>
+          <div class="bundle__feature">3 attorney-ready email swipe files</div>
+          <div class="bundle__feature">Breach response call sheet</div>
+          <div class="bundle__feature">Regulatory notification timelines</div>
+        </div>
+      </div>
+      <div class="bundle__item">
+        <div class="bundle__label">Checklist</div>
+        <div class="bundle__title">72-Hour Response Checklist</div>
+        <div class="bundle__features">
+          <div class="bundle__feature">Print it. Put it in your desk.</div>
+          <div class="bundle__feature">Phase-by-phase action checklist</div>
+          <div class="bundle__feature">Nothing missed under pressure</div>
+          <div class="bundle__feature">Fillable fields for key contacts</div>
+          <div class="bundle__feature">Policy numbers and incident details</div>
+          <div class="bundle__feature">Designed to work when you're panicking</div>
+        </div>
+      </div>
+    </div>
+    <a href="https://ineedaciso.gumroad.com/l/breached" class="btn btn--primary btn--full">Get the Bundle — $27 →</a>
+  </div>
+</section>
+
+<!-- ── FEATURES ── -->
+<section class="section">
+  <div class="container">
+    <div class="section__eyebrow">Why This Guide</div>
+    <h2 class="section__title">Written by someone who has <em>actually managed breaches.</em></h2>
+    <div class="features">
+      <div class="feature">
+        <div class="feature__check">✓</div>
+        <div class="feature__text"><strong>The sequence matters</strong> — calling your attorney before your insurance carrier, or notifying customers before regulators, can create coverage gaps and legal exposure. This guide gets the order right</div>
+      </div>
+      <div class="feature">
+        <div class="feature__check">✓</div>
+        <div class="feature__text"><strong>Attorney-ready email templates</strong> — what to say to customers, vendors, and employees that acknowledges the incident without creating additional liability</div>
+      </div>
+      <div class="feature">
+        <div class="feature__check">✓</div>
+        <div class="feature__text"><strong>Regulatory notification timelines</strong> — GDPR requires notification within 72 hours. HIPAA gives you 60 days. State laws vary from 30 to 90 days. Missing these deadlines multiplies your exposure</div>
+      </div>
+      <div class="feature">
+        <div class="feature__check">✓</div>
+        <div class="feature__text"><strong>The checklist is designed for panic</strong> — when you're in the middle of a breach, you cannot rely on your memory. One checkbox at a time, nothing missed</div>
+      </div>
+      <div class="feature">
+        <div class="feature__check">✓</div>
+        <div class="feature__text"><strong>Print it before you need it</strong> — during a ransomware attack your systems may be inaccessible. The checklist needs to exist in physical form in your desk before an incident occurs</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AUTHORITY ── -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__eyebrow">Who Wrote This</div>
+    <h2 class="section__title">Written by someone who has <em>guided breaches to resolution.</em></h2>
+    <p class="section__body">Breach response is not theoretical for us. We have guided organizations from breach to secure in under four hours — averting an average of $4.24 million in compliance breach costs per engagement.</p>
+    <div class="authority">
+      <div class="authority__creds">
+        <div class="authority__cred">
+          <div class="authority__bar"></div>
+          Nearly 30 years in information security — incident response, security operations, and executive leadership
+        </div>
+        <div class="authority__cred">
+          <div class="authority__bar"></div>
+          Guided organizations from breach to secure in under four hours — ransomware, data exfiltration, credential compromise
+        </div>
+        <div class="authority__cred">
+          <div class="authority__bar"></div>
+          CISSP, CISA, and GIAC Security Leadership certified
+        </div>
+        <div class="authority__cred">
+          <div class="authority__bar"></div>
+          United States Marine Corps veteran
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="section">
+  <div class="container">
+    <div class="section__eyebrow">Questions</div>
+    <h2 class="section__title">Frequently Asked</h2>
+    <div class="faq">
+      <div class="faq__item">
+        <button class="faq__q" onclick="toggleFaq(this)">What if I'm in the middle of a breach right now?<div class="faq__icon">+</div></button>
+        <div class="faq__a">Purchase the bundle immediately and open the checklist first — not the guide. The checklist is designed to be used under pressure. Start at Phase 1 and work through it. Read the full guide after the immediate crisis is contained.</div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q" onclick="toggleFaq(this)">Is this different from the Cybersecurity guide?<div class="faq__icon">+</div></button>
+        <div class="faq__a">Yes — completely different problem. The cybersecurity guide is about prevention: closing the doors before something happens. This guide is about response: what to do after something has already happened. Most businesses need both.</div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q" onclick="toggleFaq(this)">Do I need legal or technical expertise to use this?<div class="faq__icon">+</div></button>
+        <div class="faq__a">No. The guide and checklist are written for business owners without legal or technical backgrounds. The email templates are ready to adapt and send. The checklist requires no expertise — just the ability to follow a numbered list under pressure.</div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__q" onclick="toggleFaq(this)">Is there a refund policy?<div class="faq__icon">+</div></button>
+        <div class="faq__a">Yes. If this bundle isn't what you needed, contact us within 7 days for a full refund — no questions asked.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── UPSELL ── -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__eyebrow">Prevention + Compliance</div>
+    <h2 class="section__title">Responding to a breach is the hard way to learn you needed better security.</h2>
+    <p class="section__body">The other two INeedACISO guides cover what to do before something goes wrong.</p>
+    <div style="display:flex; flex-direction:column; gap:12px; margin-top:20px;">
+      <div style="background:var(--slate); border-radius:8px; padding:20px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+        <div>
+          <div style="font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--blue); margin-bottom:4px;">Prevention</div>
+          <div style="font-size:15px; color:var(--white); margin-bottom:2px; font-weight:600;">Cybersecurity Without an IT Department</div>
+          <div style="font-size:13px; color:var(--blue-dim);">27 pages · 30-day security quick-start</div>
+        </div>
+        <div style="text-align:right; flex-shrink:0;">
+          <div style="font-size:24px; font-weight:800; color:var(--white);">$27</div>
+          <a href="https://ineedaciso.gumroad.com/l/SMB-cybersecurity-guide" class="btn btn--primary" style="font-size:13px; padding:9px 18px; margin-top:6px;">Get the Guide →</a>
+        </div>
+      </div>
+      <div style="background:var(--slate); border-radius:8px; padding:20px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+        <div>
+          <div style="font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--blue); margin-bottom:4px;">Compliance</div>
+          <div style="font-size:15px; color:var(--white); margin-bottom:2px; font-weight:600;">The Small Business Compliance Playbook</div>
+          <div style="font-size:13px; color:var(--blue-dim);">167 pages · 9 frameworks · HIPAA, SOC 2, PCI-DSS & more</div>
+        </div>
+        <div style="text-align:right; flex-shrink:0;">
+          <div style="font-size:24px; font-weight:800; color:var(--white);">$297</div>
+          <a href="https://ineedaciso.gumroad.com/l/compliance-playbook" class="btn btn--primary" style="font-size:13px; padding:9px 18px; margin-top:6px;">Get the Playbook →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BOTTOM CTA ── -->
+<section class="cta-section">
+  <div class="container">
+    <h2 class="cta-section__title">Print the checklist before you need it.<br>Read the guide after.</h2>
+    <p class="cta-section__sub">The worst time to find this guide is after something has already gone wrong. Get it now, put the checklist in your desk, and hope you never need either one.</p>
+    <div class="hero__price" style="justify-content:center; margin-bottom:8px;">
+      <span class="hero__price-was" style="color:rgba(127,179,211,.5);">$47</span>
+      <span class="hero__price-now" style="color:var(--white);">$27</span>
+    </div>
+    <p style="font-size:13px; color:var(--blue-dim); margin-bottom:24px;">Guide + Checklist bundle · Instant PDF download · One-time purchase</p>
+    <a href="https://ineedaciso.gumroad.com/l/breached" class="btn btn--primary" style="font-size:16px; padding:15px 36px;">Get the Bundle — $27 →</a>
+    <p class="hero__guarantee" style="margin-top:12px;">🔒 Secure checkout · 7-day money-back guarantee</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__links">
+    <a href="/" class="footer__link">Home</a>
+    <a href="/cybersecurity-guide.html" class="footer__link">Cybersecurity Guide</a>
+    <a href="/compliance-playbook.html" class="footer__link">Compliance Playbook</a>
+    <a href="/privacy-policy.html" class="footer__link">Privacy Policy</a>
+    <a href="/terms-of-use.html" class="footer__link">Terms of Use</a>
+  </div>
+  <p class="footer__copy">© 2026 INeedACISO · A division of JSH Stores, LLC · All rights reserved. · This site does not provide legal advice.</p>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.closest('.faq__item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq__item').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
