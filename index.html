@@ -110,6 +110,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--signal);outline-off
 .price-note strong{color:var(--ink);font-weight:600}
 
 /* ---------- bio ---------- */
+.portrait{width:132px;height:132px;border-radius:8px;object-fit:cover;
+  margin-bottom:1.25rem;border:1px solid var(--line)}
 .bio p{color:var(--slate);margin-bottom:1rem;max-width:62ch}
 .bio p:last-of-type{margin-bottom:0}
 .bio strong{color:var(--ink);font-weight:600}
@@ -151,6 +153,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--signal);outline-off
 @media (min-width:960px){
   .sec-grid{display:grid;grid-template-columns:minmax(0,17.5rem) minmax(0,1fr);gap:3.25rem}
   .sec-grid .lede{margin-bottom:0}
+  .portrait{width:168px;height:168px;margin-top:.35rem;margin-bottom:0}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -299,6 +302,8 @@ document.addEventListener('click',function(e){
     <div>
       <span class="clause">03 — Background</span>
       <h2>Who you'd be working with</h2>
+      <img class="portrait" src="portrait.jpg" width="640" height="640" loading="lazy"
+           alt="Jason Hamilton, founder of INeedACISO">
     </div>
     <div class="bio">
       <p>I'm <strong>Jason Hamilton</strong>. I've spent nearly thirty years in security leadership across financial services, healthcare, technology, and defense — building and running programs in regulated environments where the work has to hold up under outside scrutiny.</p>
