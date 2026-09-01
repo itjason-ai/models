@@ -7,26 +7,10 @@
 <meta name="description" content="Fractional CISO services and compliance programs built to hold up when a customer, an auditor, or a regulator looks closely.">
 <link rel="canonical" href="https://ineedaciso.com/">
 
-<link rel="icon" href="/assets/logo/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/logo/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple-touch-icon.png">
-<link rel="mask-icon" href="/assets/logo/safari-pinned-tab.svg" color="#141E28">
-<meta name="theme-color" content="#141E28">
-
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="INeedACISO">
 <meta property="og:title" content="INeedACISO — Fractional vCISO and compliance programs">
 <meta property="og:description" content="Security leadership for companies that just got asked to prove it.">
 <meta property="og:url" content="https://ineedaciso.com/">
-<meta property="og:image" content="https://ineedaciso.com/assets/logo/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="INeedACISO — CISO-level guidance for small and mid-sized business.">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="INeedACISO — Fractional vCISO and compliance programs">
-<meta name="twitter:description" content="Security leadership for companies that just got asked to prove it.">
-<meta name="twitter:image" content="https://ineedaciso.com/assets/logo/og-image.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,7 +56,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--signal);outline-off
 .nav{background:var(--ink);position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line-dark)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:.95rem;padding-bottom:.95rem}
 .mark{display:flex;align-items:center;gap:.6rem;text-decoration:none}
-.mark img{height:26px;width:auto;flex:none}
+.mark svg{width:22px;height:22px;flex:none}
 .mark span{font-family:var(--display);font-weight:700;font-size:.82rem;letter-spacing:.16em;color:#fff}
 .nav-links{display:none;gap:1.75rem;align-items:center}
 .nav-links a{font-size:.93rem;text-decoration:none;color:var(--on-dark)}
@@ -147,8 +131,6 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--signal);outline-off
 
 /* ---------- footer ---------- */
 .foot{background:var(--ink-soft);color:var(--on-dark);padding:2rem 0;font-size:.88rem}
-.foot-logo{display:inline-block;margin-bottom:1.25rem}
-.foot-logo img{height:42px;width:auto}
 .foot a{color:var(--on-dark)}
 .foot-links{display:flex;flex-wrap:wrap;gap:1.1rem;margin-bottom:1rem;padding-left:0;list-style:none}
 .foot-fine{color:#7D8FA1;font-size:.8rem}
@@ -194,12 +176,19 @@ function gtag(){dataLayer.push(arguments)}
 gtag('js',new Date());gtag('config','AW-18288025290');
 </script>
 
+<!-- Booking conversions fire on booked.html after Calendly confirms.
+     This handler only records softer engagement signals; it does NOT
+     fire a Google Ads conversion, so the booking action stays clean. -->
 <script>
 document.addEventListener('click',function(e){
   var a=e.target.closest('a[href*="calendly.com"], a[href^="mailto:"]');
   if(!a)return;
-  if(window.fbq)fbq('track','Lead');
-  if(window.gtag)gtag('event','conversion',{send_to:'AW-18288025290/4p90CMTDic0cEMq9tJBE'});
+  var isBooking=a.href.indexOf('calendly.com')>-1;
+  if(window.fbq)fbq('track',isBooking?'InitiateCheckout':'Contact');
+  if(window.gtag)gtag('event',isBooking?'booking_click':'email_click',{
+    event_category:'engagement',
+    event_label:a.href
+  });
 });
 </script>
 </head>
@@ -208,8 +197,10 @@ document.addEventListener('click',function(e){
 
 <nav class="nav">
   <div class="wrap nav-in">
-    <a class="mark" href="/" aria-label="INeedACISO home">
-      <img src="/assets/logo/logo-mark-reverse.svg" alt="" width="21" height="26" aria-hidden="true">
+    <a class="mark" href="/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#2D7DD2" stroke-width="2" aria-hidden="true">
+        <path d="M12 2 4 5.5v6c0 5 3.4 8.9 8 10.5 4.6-1.6 8-5.5 8-10.5v-6L12 2Z"/>
+      </svg>
       <span>INEEDACISO</span>
     </a>
     <div class="nav-links">
@@ -369,9 +360,6 @@ document.addEventListener('click',function(e){
 
 <footer class="foot">
   <div class="wrap">
-    <a class="foot-logo" href="/" aria-label="INeedACISO home">
-      <img src="/assets/logo/logo-lockup-reverse.svg" alt="INeedACISO" width="105" height="42">
-    </a>
     <ul class="foot-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#process">How it works</a></li>
