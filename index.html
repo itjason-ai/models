@@ -174,41 +174,33 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--signal);outline-off
 }
 </style>
 
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','4448608065416215');fbq('track','PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=4448608065416215&ev=PageView&noscript=1" alt=""></noscript>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5ZXNP8N7');</script>
+<!-- End Google Tag Manager -->
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18288025290"></script>
+<!-- Engagement signals pushed to the dataLayer for GTM to act on.
+     No vendor tags fire from this page directly — all tags live in GTM. -->
 <script>
-window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments)}
-gtag('js',new Date());gtag('config','AW-18288025290');
-</script>
-
-<!-- Booking conversions fire on booked.html after Calendly confirms.
-     This handler only records softer engagement signals; it does NOT
-     fire a Google Ads conversion, so the booking action stays clean. -->
-<script>
-document.addEventListener('click',function(e){
-  var a=e.target.closest('a[href*="calendly.com"], a[href^="mailto:"]');
-  if(!a)return;
-  var isBooking=a.href.indexOf('calendly.com')>-1;
-  if(window.fbq)fbq('track',isBooking?'InitiateCheckout':'Contact');
-  if(window.gtag)gtag('event',isBooking?'booking_click':'email_click',{
-    event_category:'engagement',
-    event_label:a.href
+window.dataLayer = window.dataLayer || [];
+document.addEventListener('click', function(e){
+  var a = e.target.closest('a[href*="calendly.com"], a[href^="mailto:"]');
+  if(!a) return;
+  dataLayer.push({
+    event: a.href.indexOf('calendly.com') > -1 ? 'booking_click' : 'email_click',
+    link_url: a.href
   });
 });
 </script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5ZXNP8N7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <a class="skip" href="#main">Skip to content</a>
 
 <nav class="nav">
