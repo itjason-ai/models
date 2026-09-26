@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>INeedACISO — Virtual CISO (vCISO) and ISO 27001 compliance programs</title>
-<meta name="description" content="Fractional and virtual CISO (vCISO) services and ISO 27001 implementation for small and mid-sized companies. Programs built to hold up when a customer or auditor looks closely.">
-<link rel="canonical" href="https://ineedaciso.com/">
+<title>Virtual CISO (vCISO) Services and Pricing | INeedACISO</title>
+<meta name="description" content="Virtual CISO (vCISO) and fractional CISO services on retainer. Published pricing, clear scope, senior security leadership without a full-time hire.">
+<link rel="canonical" href="https://ineedaciso.com/virtual-ciso.html">
 
 <link rel="icon" href="/assets/logo/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32x32.png">
@@ -16,9 +16,9 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="INeedACISO">
-<meta property="og:title" content="INeedACISO — Virtual CISO (vCISO) and ISO 27001 compliance programs">
-<meta property="og:description" content="Security leadership for companies that just got asked to prove it.">
-<meta property="og:url" content="https://ineedaciso.com/">
+<meta property="og:title" content="Virtual CISO (vCISO) Services and Pricing | INeedACISO">
+<meta property="og:description" content="A virtual CISO on retainer: roadmap, compliance, vendor risk, and customer security reviews. Pricing published.">
+<meta property="og:url" content="https://ineedaciso.com/virtual-ciso.html">
 <meta property="og:image" content="https://ineedaciso.com/assets/logo/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -125,6 +125,19 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--signal);outline-off
 section[id]{scroll-margin-top:72px}
 .sec-cta .btn{display:inline-block}
 
+/* ---------- pricing tiers ---------- */
+.tiers{display:grid;gap:1rem}
+.tier{border:1px solid var(--line);border-radius:8px;padding:1.4rem;background:var(--paper)}
+.tier.featured{border-color:var(--signal);box-shadow:0 0 0 1px var(--signal)}
+.tier h3{font-size:1.05rem;margin-bottom:.15rem}
+.tier .who{color:var(--slate);font-size:.92rem;margin-bottom:.9rem}
+.tier .fee{font-family:var(--mono);font-size:1.28rem;color:var(--signal-deep);font-weight:500;margin-bottom:.15rem}
+.tier .fee span{font-size:.8rem;color:var(--slate)}
+.tier ul{list-style:none;padding-left:0;margin:.9rem 0 0;border-top:1px solid var(--line);padding-top:.9rem}
+.tier li{color:var(--slate);font-size:.94rem;padding-left:1.05rem;position:relative;margin-bottom:.45rem}
+.tier li:before{content:"";position:absolute;left:0;top:.52rem;width:.42rem;height:.42rem;border-radius:50%;background:var(--signal)}
+@media (min-width:860px){.tiers{grid-template-columns:repeat(3,1fr)}}
+
 /* ---------- bio ---------- */
 .portrait{width:132px;height:132px;border-radius:8px;object-fit:cover;
   margin-bottom:1.25rem;border:1px solid var(--line)}
@@ -212,12 +225,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <img src="/assets/logo/logo-lockup-reverse.svg" alt="INeedACISO" width="4383" height="1749">
     </a>
     <div class="nav-links">
-      <a href="#services">Services</a>
       <a href="/virtual-ciso.html">Virtual CISO</a>
-      <a href="#iso-27001">ISO 27001</a>
-      <a href="#process">How it works</a>
-      <a href="#about">About</a>
-      <a href="#products">Guides</a>
+      <a href="/#iso-27001">ISO 27001</a>
+      <a href="#pricing">Pricing</a>
+      <a href="/#about">About</a>
+      <a href="/#products">Guides</a>
     </div>
     <a class="nav-cta" href="https://calendly.com/it-jason/30min" target="_blank" rel="noopener">Book a call</a>
   </div>
@@ -227,12 +239,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header class="hero on-dark">
   <div class="wrap">
-    <span class="clause">Fractional and virtual CISO</span>
-    <h1>Security leadership for companies that just got asked to prove it.</h1>
-    <p class="sub">Virtual CISO leadership and ISO 27001, SOC 2, and compliance programs built to hold up when a customer, an auditor, or a regulator looks closely.</p>
+    <span class="clause">Virtual CISO · Fractional CISO</span>
+    <h1>A virtual CISO for companies that need security leadership now.</h1>
+    <p class="sub">Senior security leadership on retainer: the roadmap, the compliance work, the vendor reviews, and the customer questions, owned by one accountable person instead of spread across your team.</p>
     <div class="btns">
       <a class="btn btn-solid" href="https://calendly.com/it-jason/30min" target="_blank" rel="noopener">Book a discovery call</a>
-      <a class="btn btn-ghost" href="#process">See how engagements work</a>
+      <a class="btn btn-ghost" href="#pricing">See pricing</a>
     </div>
     <ul class="creds">
       <li>CISSP</li><li>CISA</li><li>GSLC</li>
@@ -243,168 +255,156 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </header>
 
-<section class="sec" id="services">
+<section class="sec" id="what">
   <div class="wrap sec-grid">
     <div>
-      <span class="clause">01 — Services</span>
-      <h2>What I'm usually called in for</h2>
-      <p class="lede">Three situations account for most engagements. If yours looks like one of these, we should talk.</p>
+      <span class="clause">01 — The role</span>
+      <h2>What a virtual CISO actually does</h2>
+      <p class="lede">A virtual chief information security officer carries the same responsibilities as a full-time CISO, on the fraction of the schedule your company actually needs.</p>
     </div>
     <div class="rows">
       <article class="row">
-        <h3>A compliance deadline you can't miss</h3>
-        <p>A framework has become a condition of doing business. I build the program end to end — risk analysis, policies, controls, and the evidence to back them up — so it survives the first serious look.</p>
-        <p class="tags">SOC 2 · ISO 27001 · HIPAA · CMMC · PCI DSS · NIST · and others</p>
+        <h3>Owns the security roadmap</h3>
+        <p>One prioritized plan tied to your business risk and your deadlines, reviewed and updated on a set cadence instead of rebuilt every time something breaks.</p>
       </article>
       <article class="row">
-        <h3>A deal blocked by a security review</h3>
-        <p>An enterprise customer sent a questionnaire and the answers aren't there yet. I organize the evidence, answer what's answerable, and close the gaps that are holding up signature.</p>
-        <p class="tags">Questionnaires · Diligence · Evidence packages</p>
+        <h3>Runs the compliance program</h3>
+        <p>Framework selection, gap assessment, policies, controls, and evidence. Whether the driver is a customer, an auditor, an insurer, or a regulator, the program is built to survive the review.</p>
+        <p class="tags">SOC 2 · ISO 27001 · HIPAA · CMMC · PCI DSS · NIST · GLBA</p>
       </article>
       <article class="row">
-        <h3>Security leadership you can't yet hire</h3>
-        <p>You need someone accountable for the security program without carrying a full-time executive. A virtual CISO on retainer covers the roadmap, vendor risk, and board and customer reporting.</p>
-        <p class="tags">Fractional CISO · Virtual CISO (vCISO) retainer</p>
-        <p class="tags"><a href="/virtual-ciso.html">Retainers start at $2,000/month — see what each tier includes</a></p>
+        <h3>Answers your customers</h3>
+        <p>Security questionnaires, diligence requests, and enterprise vendor reviews handled by someone who can speak to the controls with authority, so deals stop stalling in procurement.</p>
       </article>
-      <p class="price-note"><strong>What it costs:</strong> vCISO retainers run $2,000, $6,500, or $12,000 per month depending on scope, billed monthly against a written scope of services. Project work such as an ISO 27001 implementation is quoted as a fixed fee. <a href="/virtual-ciso.html#pricing">See the tiers</a>.</p>
+      <article class="row">
+        <h3>Manages vendor and third-party risk</h3>
+        <p>A defensible process for reviewing the vendors you depend on, sized for a small team rather than copied from an enterprise playbook.</p>
+      </article>
+      <article class="row">
+        <h3>Prepares you for incidents</h3>
+        <p>Incident response plan, roles, and tabletop exercises, plus the reporting obligations that come with your frameworks and your cyber insurance policy.</p>
+      </article>
+      <article class="row">
+        <h3>Reports to your board and your buyers</h3>
+        <p>Plain-language reporting on where the program stands, what changed, and what needs funding next, in a form your board, investors, or largest customer will accept.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="sec sec-mist" id="iso-27001">
+<section class="sec sec-mist" id="pricing">
   <div class="wrap sec-grid">
     <div>
-      <span class="clause">02 — ISO 27001</span>
-      <h2>ISO 27001, from scoping to certification</h2>
-      <p class="lede">For companies whose customers, partners, or overseas buyers now require certification. I build the ISMS to ISO/IEC 27001:2022 with your team and stay with you through both audit stages.</p>
+      <span class="clause">02 — Pricing</span>
+      <h2>What it costs</h2>
+      <p class="lede">Fixed monthly retainers, billed monthly, scoped on a discovery call before anything is signed. Each tier states what it includes, so you know where the line is before we start.</p>
     </div>
     <div>
-      <div class="step">
-        <span class="step-n">01</span>
-        <div>
-          <h3>Scope and gap assessment</h3>
-          <p>Define what the ISMS covers and measure where you stand against the standard and Annex A. You get a gap report and a realistic timeline to certification.</p>
-        </div>
+      <div class="tiers">
+        <article class="tier">
+          <h3>Advisory</h3>
+          <p class="who">Small teams with a specific driver and internal hands to do the work.</p>
+          <p class="fee">$2,000<span> / month</span></p>
+          <ul>
+            <li>One working session each month</li>
+            <li>Security roadmap and risk register, kept current</li>
+            <li>Review of policies and documents you send over</li>
+            <li>Email and Slack access between sessions</li>
+          </ul>
+        </article>
+        <article class="tier featured">
+          <h3>Core Program</h3>
+          <p class="who">Companies working toward certification or facing regular customer security reviews.</p>
+          <p class="fee">$6,500<span> / month</span></p>
+          <ul>
+            <li>Everything in Advisory</li>
+            <li>Framework program ownership end to end</li>
+            <li>Policies and controls written for your environment</li>
+            <li>Two customer security questionnaires per quarter</li>
+            <li>Two vendor risk reviews per month</li>
+            <li>Quarterly board or customer reporting</li>
+          </ul>
+        </article>
+        <article class="tier">
+          <h3>Embedded</h3>
+          <p class="who">Regulated or high-scrutiny companies that need a named security executive.</p>
+          <p class="fee">$12,000<span> / month</span></p>
+          <ul>
+            <li>Everything in Core Program</li>
+            <li>Named CISO of record for customers and auditors</li>
+            <li>Weekly cadence with your leadership team</li>
+            <li>Audit and examination support, up to 40 hours per audit cycle</li>
+            <li>Incident response leadership</li>
+            <li>Unlimited questionnaires and vendor reviews</li>
+          </ul>
+        </article>
       </div>
-      <div class="step">
-        <span class="step-n">02</span>
-        <div>
-          <h3>Risk assessment and treatment</h3>
-          <p>A documented risk methodology, a risk register, and a treatment plan. This decides which controls you need and why, and it's the first thing an auditor tests.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-n">03</span>
-        <div>
-          <h3>Build the ISMS</h3>
-          <p>Policies, procedures, and controls written for how your company actually operates, plus a Statement of Applicability that ties every Annex A control to a decision.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-n">04</span>
-        <div>
-          <h3>Internal audit and management review</h3>
-          <p>Both are required before certification, and both are commonly left too late. They're completed and documented before the certification body arrives.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-n">05</span>
-        <div>
-          <h3>Stage 1 and Stage 2 audit support</h3>
-          <p>I prepare you for both stages, support you during the audits, and work through any nonconformities until the certificate is issued.</p>
-        </div>
-      </div>
-      <p class="price-note"><strong>Already have SOC 2?</strong> Much of the control work carries over, so ISO 27001 is usually a shorter project than starting from scratch. Certification is issued by an accredited certification body; my role is getting you ready to pass.</p>
+      <p class="price-note"><strong>Not sure which fits?</strong> Most companies start in Core Program during a certification push and step down to Advisory once the program is running. Project work such as an ISO 27001 implementation or a risk assessment is quoted as a fixed fee instead of a retainer.</p>
+      <p class="price-note"><strong>Beyond what's included:</strong> retainer hours are discounted against a standard rate of $385 per hour. Work past the limits in your tier, and one-off requests outside an active retainer, are billed at $385 per hour and agreed in writing before anything starts. Security team hiring and mentoring is available as an add-on.</p>
       <div class="sec-cta">
-        <a class="btn btn-solid" href="https://calendly.com/it-jason/30min" target="_blank" rel="noopener">Book an ISO 27001 discovery call</a>
+        <a class="btn btn-solid" href="https://calendly.com/it-jason/30min" target="_blank" rel="noopener">Book a discovery call</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="sec" id="process">
+<section class="sec" id="compare">
   <div class="wrap sec-grid">
     <div>
-      <span class="clause">03 — Process</span>
-      <h2>How engagements work</h2>
-      <p class="lede">No open-ended hourly arrangements. Scope and price are agreed before work starts.</p>
+      <span class="clause">03 — The alternatives</span>
+      <h2>Virtual CISO, fractional CISO, or a full-time hire</h2>
+      <p class="lede">The terms get used interchangeably. What matters is how much senior attention you need and what you're willing to carry.</p>
+    </div>
+    <div class="rows">
+      <article class="row">
+        <h3>A full-time CISO</h3>
+        <p>Right when security is core to your product or your regulator expects a named executive on staff. It's also a six-figure salary plus benefits and equity, and a hiring process that takes months you may not have.</p>
+      </article>
+      <article class="row">
+        <h3>A virtual or fractional CISO</h3>
+        <p>The same seniority on a set monthly commitment, starting in weeks rather than months. You get the judgment of someone who has built these programs before without the fixed cost of an executive hire.</p>
+      </article>
+      <article class="row">
+        <h3>A consulting firm</h3>
+        <p>Useful for a defined project, less so for continuity. You often get a senior name in the pitch and junior staff on the work. Here, the person on the call is the person doing the work.</p>
+      </article>
+      <article class="row">
+        <h3>Your IT provider or MSP</h3>
+        <p>They keep systems running, which is a different job from owning risk decisions, answering an auditor, or signing off on what a customer is told. Most MSPs will say the same thing.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-mist" id="start">
+  <div class="wrap sec-grid">
+    <div>
+      <span class="clause">04 — Getting started</span>
+      <h2>How an engagement begins</h2>
+      <p class="lede">No procurement marathon. From first call to work starting is usually about two weeks.</p>
     </div>
     <div>
       <div class="step">
         <span class="step-n">01</span>
         <div>
           <h3>Discovery call</h3>
-          <p>Thirty minutes. What's driving the deadline, what's already in place, and what you're actually obligated to do — which is often narrower than you've been told.</p>
+          <p>Thirty minutes on what's driving this, what you've already got, and what your deadline looks like. You leave with a straight answer on whether I can help.</p>
         </div>
       </div>
       <div class="step">
         <span class="step-n">02</span>
         <div>
-          <h3>Written scope of work</h3>
-          <p>A fixed fee against defined deliverables, each with a stated completion standard. You know what you're getting and what it costs before anyone signs.</p>
+          <h3>Scope and proposal</h3>
+          <p>A written scope of services with the tier, the deliverables, and the fee. Nothing open-ended, and no hourly meter running.</p>
         </div>
       </div>
       <div class="step">
         <span class="step-n">03</span>
         <div>
-          <h3>Built, documented, handed over</h3>
-          <p>The program is yours to run when I'm done — editable policies, a live risk register, and a compliance calendar. Retainer support afterward is optional, not assumed.</p>
+          <h3>First 90 days</h3>
+          <p>A prioritized plan in the first weeks, then execution against it. You'll know what's being worked on and what's coming next at every point.</p>
         </div>
       </div>
-      <p class="price-note">Every engagement is scoped and priced to what the situation actually requires. Retainers are scoped separately.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec sec-mist" id="about">
-  <div class="wrap sec-grid">
-    <div>
-      <span class="clause">04 — Background</span>
-      <h2>Who you'd be working with</h2>
-      <img class="portrait" src="portrait.jpg" width="640" height="640" loading="lazy"
-           alt="Jason Hamilton, founder of INeedACISO">
-    </div>
-    <div class="bio">
-      <p>I'm <strong>Jason Hamilton</strong>. I've spent nearly thirty years in security leadership across financial services, healthcare, technology, and defense — building and running programs in regulated environments where the work has to hold up under outside scrutiny.</p>
-      <p>Most of my work is with small and mid-sized companies facing a requirement they haven't had to meet before. They rarely need a scaled-down enterprise program. They need the parts that carry real weight, documented well enough to defend, and nothing they'll never use.</p>
-      <p>I've worked across the major regulatory and security frameworks. Whatever standard is in front of you, the conversation starts the same way: what are you actually obligated to do, and what will it take to prove it.</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="products">
-  <div class="wrap sec-grid">
-    <div>
-      <span class="clause">05 — Guides</span>
-      <h2>Start smaller</h2>
-      <p class="lede">Not ready for an engagement? The same guidance, written down for you to work through yourself.</p>
-    </div>
-    <div>
-      <a class="prod" href="cybersecurity-guide.html">
-        <span class="prod-spine" aria-hidden="true"></span>
-        <span>
-          <h3>SMB Cybersecurity Guide</h3>
-          <p>Forty pages on where to start when nobody in the building owns security yet.</p>
-          <span class="price">$27</span>
-        </span>
-      </a>
-      <a class="prod" href="compliance-playbook.html">
-        <span class="prod-spine alt" aria-hidden="true"></span>
-        <span>
-          <h3>Small Business Compliance Playbook</h3>
-          <p>167 pages. The full program, structured so you can build it without me.</p>
-          <span class="price">$297</span>
-        </span>
-      </a>
-      <a class="prod" href="breach-response.html">
-        <span class="prod-spine" aria-hidden="true"></span>
-        <span>
-          <h3>You've Been Breached Bundle</h3>
-          <p>What to do in the first 48 hours, and who to call in what order.</p>
-          <span class="price">$27</span>
-        </span>
-      </a>
     </div>
   </div>
 </section>
@@ -426,12 +426,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer class="foot">
   <div class="wrap">
     <ul class="foot-links">
-      <li><a href="#services">Services</a></li>
       <li><a href="/virtual-ciso.html">Virtual CISO</a></li>
-      <li><a href="#iso-27001">ISO 27001</a></li>
-      <li><a href="#process">How it works</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#products">Guides</a></li>
+      <li><a href="/#iso-27001">ISO 27001</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#products">Guides</a></li>
       <li><a href="mailto:jason@ineedaciso.com">Contact</a></li>
     </ul>
     <p class="foot-fine">INeedACISO is a service of JSH Stores, LLC. Advisory services only — not an audit, examination, attestation, or legal advice.</p>
