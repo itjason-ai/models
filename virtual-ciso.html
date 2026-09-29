@@ -25,9 +25,13 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://ineedaciso.com/assets/logo/og-image.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Fonts load async so they never block first paint. Weights trimmed 8 -> 5. -->
+<link rel="preload" as="style"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;600&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;600&display=swap"></noscript>
 
 <style>
 :root{
@@ -41,8 +45,8 @@
   --line-dark:#33465A;
   --paper:#FFFFFF;
   --on-dark:#C6D4E2;
-  --display:'Montserrat',system-ui,sans-serif;
-  --body:'IBM Plex Sans',system-ui,sans-serif;
+  --display:'Montserrat','Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --body:'IBM Plex Sans','Segoe UI',Roboto,Helvetica,Arial,sans-serif;
   --mono:'IBM Plex Mono',ui-monospace,monospace;
   --wrap:1080px;
   --pad:1.5rem;
@@ -74,7 +78,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--signal);outline-off
 .nav-links{display:none;gap:1.75rem;align-items:center}
 .nav-links a{font-size:.93rem;text-decoration:none;color:var(--on-dark)}
 .nav-links a:hover{color:#fff}
-.nav-cta{font-family:var(--body);font-size:.9rem;font-weight:500;text-decoration:none;color:#fff;background:var(--signal);padding:.6rem 1.05rem;border-radius:6px;white-space:nowrap}
+.nav-cta{font-family:var(--body);font-size:.9rem;font-weight:600;text-decoration:none;color:#fff;background:var(--signal);padding:.6rem 1.05rem;border-radius:6px;white-space:nowrap}
 .nav-cta:hover{background:var(--signal-deep)}
 
 /* ---------- clause mark ---------- */
@@ -94,7 +98,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--signal);outline-off
 .hero h1{font-size:2.05rem;color:#fff;margin-bottom:1.15rem;max-width:19ch}
 .hero p.sub{color:var(--on-dark);font-size:1.08rem;max-width:52ch;margin-bottom:1.9rem}
 .btns{display:flex;flex-direction:column;gap:.7rem;margin-bottom:2.4rem}
-.btn{display:inline-block;text-align:center;text-decoration:none;font-weight:500;
+.btn{display:inline-block;text-align:center;text-decoration:none;font-weight:600;
   font-size:1rem;padding:.9rem 1.5rem;border-radius:6px}
 .btn-solid{background:var(--signal);color:#fff}
 .btn-solid:hover{background:var(--signal-deep)}
@@ -131,7 +135,7 @@ section[id]{scroll-margin-top:72px}
 .tier.featured{border-color:var(--signal);box-shadow:0 0 0 1px var(--signal)}
 .tier h3{font-size:1.05rem;margin-bottom:.15rem}
 .tier .who{color:var(--slate);font-size:.92rem;margin-bottom:.9rem}
-.tier .fee{font-family:var(--mono);font-size:1.28rem;color:var(--signal-deep);font-weight:500;margin-bottom:.15rem}
+.tier .fee{font-family:var(--mono);font-size:1.28rem;color:var(--signal-deep);font-weight:600;margin-bottom:.15rem}
 .tier .fee span{font-size:.8rem;color:var(--slate)}
 .tier ul{list-style:none;padding-left:0;margin:.9rem 0 0;border-top:1px solid var(--line);padding-top:.9rem}
 .tier li{color:var(--slate);font-size:.94rem;padding-left:1.05rem;position:relative;margin-bottom:.45rem}
@@ -153,7 +157,7 @@ section[id]{scroll-margin-top:72px}
 .prod-spine.alt{background:var(--signal)}
 .prod h3{font-size:1rem;margin-bottom:.25rem}
 .prod p{color:var(--slate);font-size:.92rem;margin-bottom:.45rem}
-.prod .price{font-family:var(--mono);font-size:.92rem;color:var(--signal-deep);font-weight:500}
+.prod .price{font-family:var(--mono);font-size:.92rem;color:var(--signal-deep);font-weight:600}
 
 /* ---------- final cta ---------- */
 .final{background:var(--ink);color:#fff;padding:3.25rem 0}
@@ -340,7 +344,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </article>
       </div>
       <p class="price-note"><strong>Not sure which fits?</strong> Most companies start in Core Program during a certification push and step down to Advisory once the program is running. Project work such as an ISO 27001 implementation or a risk assessment is quoted as a fixed fee instead of a retainer.</p>
-      <p class="price-note"><strong>Beyond what's included:</strong> retainer hours are discounted against a standard rate of $385 per hour. Work past the limits in your tier, and one-off requests outside an active retainer, are billed at $385 per hour and agreed in writing before anything starts. Security team hiring and mentoring is available as an add-on.</p>
+      <p class="price-note"><strong>Beyond what's included:</strong> work past the limits in your tier, and one-off requests outside an active retainer, are quoted and agreed in writing before anything starts. Retainer clients are billed at a reduced rate for that work. Security team hiring and mentoring is available as an add-on.</p>
       <div class="sec-cta">
         <a class="btn btn-solid" href="https://calendly.com/it-jason/30min" target="_blank" rel="noopener">Book a discovery call</a>
       </div>
