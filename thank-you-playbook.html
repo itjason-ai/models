@@ -14,42 +14,48 @@
 <meta name="theme-color" content="#141E28">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18288025290"></script>
+<!-- Purchase signal for GTM. Payhip redirects here after checkout.
+     guide_purchased fires once per purchase: reloads, back-button visits, and
+     repeat visits within 24 hours are skipped. Google Ads and Meta tags in GTM
+     read value, currency, product, and transaction_id from this event. -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-18288025290');
-</script>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '4448608065416215');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=4448608065416215&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-<script>
-  gtag('event', 'conversion', {
-    'send_to': 'AW-18288025290/4p90CMTDic0cEMq9tJBE',
-    'value': 297.0,
-    'currency': 'USD',
-    'transaction_id': ''
+window.dataLayer = window.dataLayer || [];
+(function(){
+  var KEY = 'iac_purchase_playbook', DAY = 24 * 60 * 60 * 1000, now = Date.now(), navType = 'navigate', rec = null, lead = {};
+  try {
+    var nav = performance.getEntriesByType('navigation')[0];
+    if (nav) navType = nav.type;
+    else if (performance.navigation && performance.navigation.type === 1) navType = 'reload';
+  } catch(e){}
+  if (navType === 'reload' || navType === 'back_forward') return;
+  try { rec = JSON.parse(localStorage.getItem(KEY)); } catch(e){}
+  if (rec && now - rec.t < DAY) return;
+  try {
+    var s = JSON.parse(localStorage.getItem('iac_source'));
+    if (s && now - s.t < 30 * DAY) lead = s;
+  } catch(e){}
+  var id = 'ph-playbook-' + now + '-' + Math.random().toString(36).slice(2, 8);
+  try { localStorage.setItem(KEY, JSON.stringify({ id: id, t: now })); } catch(e){}
+  dataLayer.push({
+    event: 'guide_purchased',
+    product: 'playbook',
+    product_name: 'The Small Business Compliance Playbook',
+    value: 297.0,
+    currency: 'USD',
+    transaction_id: id,
+    lead_source: lead.utm_source || '(direct)',
+    lead_medium: lead.utm_medium || '(none)',
+    lead_campaign: lead.utm_campaign || '(none)'
   });
+})();
 </script>
-<script>
-  fbq('track', 'Purchase', {value: 297.0, currency: 'USD'});
-</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5ZXNP8N7');</script>
+<!-- End Google Tag Manager -->
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -138,6 +144,21 @@ h1 {
   font-size: 13px; padding: 10px 20px;
 }
 .btn--ghost:hover { background: rgba(45,125,210,.1); color: #fff; }
+.call {
+  max-width: 480px; width: 100%;
+  margin: 0 auto 32px; text-align: left;
+  border: 1px solid rgba(127,179,211,.3); border-radius: 8px;
+  padding: 22px 26px;
+}
+.call p { font-size: 14px; color: #7FB3D3; line-height: 1.55; margin-bottom: 14px; }
+.call p strong { color: #fff; font-weight: 600; }
+.call a {
+  display: inline-block; font-size: 14px; font-weight: 600;
+  color: #fff; text-decoration: none;
+  border-bottom: 1px solid #2D7DD2; padding-bottom: 2px;
+}
+.call a:hover { border-bottom-color: #fff; }
+.btn:focus-visible, .call a:focus-visible, .footer a:focus-visible, .wordmark:focus-visible { outline: 3px solid #2D7DD2; outline-offset: 3px; }
 
 .buttons { display: flex; flex-direction: column; align-items: center; gap: 10px; }
 
@@ -150,6 +171,10 @@ h1 {
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5ZXNP8N7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <a href="/" class="wordmark" aria-label="INeedACISO home">
   <img src="/assets/logo/logo-lockup-reverse.svg" alt="INeedACISO" width="100" height="40">
@@ -171,11 +196,11 @@ h1 {
   
   <div class="next-step"><span class="next-step__num">01</span>Check your email for your download link. If you don't see it within 5 minutes, check your spam folder. If files do not open automatically after download, navigate to your Downloads folder and open them from there.</div>
   <div class="next-step"><span class="next-step__num">02</span>Start with Section 2 — the four-question diagnostic that identifies your specific regulatory obligations. Everything else flows from there.</div>
-  <div class="next-step"><span class="next-step__num">03</span>Need hands-on help implementing your compliance program? Schedule a complimentary discovery call to discuss a vCISO engagement.</div>
+  <div class="next-step"><span class="next-step__num">03</span>Need hands-on help implementing your compliance program? Book a complimentary 30-minute discovery call to talk through a vCISO engagement.</div>
 </div>
 
 <div class="buttons">
-  <a href="mailto:info@ineedaciso.com" class="btn">Schedule a vCISO Discovery Call →</a>
+  <a href="/virtual-ciso.html#book" class="btn">Book a vCISO discovery call →</a>
   <a href="/" class="btn btn--ghost">Back to INeedACISO →</a>
 </div>
 

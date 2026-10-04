@@ -20,16 +20,63 @@
 <!-- ===== CONVERSION SIGNAL =====
      Pushed BEFORE the GTM container so the event is in the queue when
      GTM initialises. Tags themselves live in GTM, not on this page.
-     This page is only reachable via the Calendly redirect after a
-     confirmed booking, so page load == booking confirmed.
+     Reached via the Calendly redirect after a confirmed booking.
+     Pushes booking_completed with transaction_id and lead_source/medium/campaign.
+     Reloads, back-button visits, and a booking already recorded by the
+     embedded calendar push booking_duplicate instead, which fires nothing.
 ================================ -->
 <script>
 window.dataLayer = window.dataLayer || [];
-dataLayer.push({
-  event: 'booking_confirmed',
-  value: 500.0,
-  currency: 'USD'
-});
+(function(){
+  // Shown inside the embedded calendar instead of the top window: the parent
+  // page already recorded the booking, so do nothing here.
+  if (window.top !== window.self) return;
+
+  var KEY = 'iac_booking', WINDOW_MS = 15 * 60 * 1000, now = Date.now();
+  var q = null, id = null, prev = null, navType = 'navigate';
+  var lead = {};
+  try {
+    q = new URLSearchParams(location.search); id = q.get('invitee_uuid');
+    ['utm_source','utm_medium','utm_campaign'].forEach(function(k){ if (q.get(k)) lead[k] = q.get(k); });
+  } catch(e){}
+  if (!lead.utm_source) {
+    try {
+      var stored = JSON.parse(localStorage.getItem('iac_source'));
+      if (stored && Date.now() - stored.t < 30 * 24 * 60 * 60 * 1000) lead = stored;
+    } catch(e){}
+  }
+  try { prev = JSON.parse(localStorage.getItem(KEY)); } catch(e){}
+  try {
+    var nav = performance.getEntriesByType('navigation')[0];
+    if (nav) navType = nav.type;
+    else if (performance.navigation && performance.navigation.type === 1) navType = 'reload';
+  } catch(e){}
+
+  // If Calendly passes event details, the URL carries the invitee's name and
+  // email. Strip it before any tag (GTM, Meta) reads the page URL.
+  if (location.search && window.history && history.replaceState) {
+    history.replaceState(null, '', location.pathname + location.hash);
+  }
+
+  var duplicate =
+    navType === 'reload' || navType === 'back_forward' ||
+    (prev && ((id && prev.id === id) || (!id && now - prev.t < WINDOW_MS)));
+
+  if (duplicate) { dataLayer.push({ event: 'booking_duplicate' }); return; }
+
+  id = id || ('bk-' + now + '-' + Math.random().toString(36).slice(2, 8));
+  try { localStorage.setItem(KEY, JSON.stringify({ id: id, t: now })); } catch(e){}
+  dataLayer.push({
+    event: 'booking_completed',
+    value: 500.0,
+    currency: 'USD',
+    transaction_id: id,
+    booking_source: 'redirect',
+    lead_source: lead.utm_source || '(direct)',
+    lead_medium: lead.utm_medium || '(none)',
+    lead_campaign: lead.utm_campaign || '(none)'
+  });
+})();
 </script>
 
 <!-- Google Tag Manager -->
