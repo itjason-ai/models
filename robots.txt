@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ineedaciso.com/sitemap.xml
