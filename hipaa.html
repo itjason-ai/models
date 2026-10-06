@@ -3,9 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>INeedACISO — Virtual CISO (vCISO) and Security Compliance Programs</title>
-<meta name="description" content="Virtual CISO (vCISO) services for small and mid-sized companies. Security and compliance programs that hold up when customers and auditors look closely.">
-<link rel="canonical" href="https://ineedaciso.com/">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5ZXNP8N7');</script>
+<!-- End Google Tag Manager -->
+<title>HIPAA Security Rule Compliance and Risk Analysis | INeedACISO</title>
+<meta name="description" content="HIPAA Security Rule compliance for covered entities and business associates: security risk analysis, safeguards, policies, and BAAs. Fixed fees.">
+<link rel="canonical" href="https://ineedaciso.com/hipaa.html">
 
 <link rel="icon" href="/assets/logo/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32x32.png">
@@ -16,9 +23,9 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="INeedACISO">
-<meta property="og:title" content="INeedACISO — Virtual CISO (vCISO) and Security Compliance Programs">
-<meta property="og:description" content="Security leadership for companies that just got asked to prove it.">
-<meta property="og:url" content="https://ineedaciso.com/">
+<meta property="og:title" content="HIPAA Security Rule Compliance and Risk Analysis | INeedACISO">
+<meta property="og:description" content="HIPAA Security Rule compliance for covered entities and business associates: security risk analysis, safeguards, policies, and BAAs. Fixed fees.">
+<meta property="og:url" content="https://ineedaciso.com/hipaa.html">
 <meta property="og:image" content="https://ineedaciso.com/assets/logo/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -213,7 +220,13 @@ section[id]{scroll-margin-top:88px}
 .offer-list .credit{display:block;margin-top:.35rem;color:var(--ink);font-size:.88rem}
 [hidden]{display:none!important}
 @media (min-width:860px){.offer-grid{grid-template-columns:repeat(3,1fr)}}
-
+.nav-links a{white-space:nowrap}
+@media (max-width:999px){.nav-links{display:none!important}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation-duration:.01ms !important;transition-duration:.01ms !important}
+}
+/* ---------- batch 2: inner pages ---------- */
 .crumbs{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--on-dark);margin:0 0 1.2rem;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.4rem}
 .crumbs li+li:before{content:"/";margin-right:.4rem;color:var(--line-dark)}
 .crumbs a{color:var(--on-dark);text-decoration:none}
@@ -244,27 +257,13 @@ section[id]{scroll-margin-top:88px}
 .related{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem;padding:0;list-style:none}
 .related a{display:inline-block;font-size:.9rem;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:.35rem .8rem;color:var(--ink);background:var(--paper)}
 .related a:hover{border-color:var(--signal)}
-.tags a,.price-note a{color:var(--signal-deep)}
-.nav-links a{white-space:nowrap}
-@media (max-width:999px){.nav-links{display:none!important}}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *{animation-duration:.01ms !important;transition-duration:.01ms !important}
-}
+.lede a,.row p a,.step p a,.price-note a{color:var(--signal-deep)}
+.tags a{color:var(--signal-deep)}
+.inline-offers{display:grid;gap:1rem}
+@media (min-width:860px){.inline-offers.three{grid-template-columns:repeat(3,1fr)}.inline-offers.two{grid-template-columns:repeat(2,1fr)}}
+.foot-links a{text-decoration:none}
+.foot-links a:hover{text-decoration:underline}
 </style>
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5ZXNP8N7');</script>
-<!-- End Google Tag Manager -->
-
-<!-- Booking + engagement signals for GTM: /assets/js/booking.js -->
-<script src="/assets/js/booking.js" defer></script>
-<!-- Published prices live in one file: /assets/js/pricing.js -->
-<script src="/assets/js/pricing.js" defer></script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -273,92 +272,102 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
    "@type": "Organization",
    "@id": "https://ineedaciso.com/#org",
    "name": "INeedACISO",
-   "url": "https://ineedaciso.com/",
-   "logo": "https://ineedaciso.com/assets/logo/og-image.png",
-   "email": "jason@ineedaciso.com",
-   "founder": {
-    "@id": "https://ineedaciso.com/#jason"
+   "url": "https://ineedaciso.com/"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://ineedaciso.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Frameworks",
+     "item": "https://ineedaciso.com/compliance.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "HIPAA",
+     "item": "https://ineedaciso.com/hipaa.html"
+    }
+   ]
+  },
+  {
+   "@type": "Service",
+   "@id": "https://ineedaciso.com/hipaa.html#service",
+   "name": "HIPAA compliance consulting",
+   "serviceType": "HIPAA Security Rule compliance consulting",
+   "description": "HIPAA Security Rule compliance for covered entities and business associates: security risk analysis, safeguards, policies, and BAAs. Fixed fees.",
+   "url": "https://ineedaciso.com/hipaa.html",
+   "provider": {
+    "@type": "Organization",
+    "@id": "https://ineedaciso.com/#org",
+    "name": "INeedACISO",
+    "url": "https://ineedaciso.com/"
    },
    "areaServed": {
     "@type": "Country",
     "name": "United States"
    },
-   "description": "Virtual CISO (vCISO) services and security compliance programs for small and mid-sized companies.",
-   "knowsAbout": [
-    "Virtual CISO",
-    "SOC 2",
-    "ISO 27001",
-    "HIPAA",
-    "CMMC",
-    "NIST SP 800-171",
-    "PCI DSS",
-    "NIST Cybersecurity Framework",
-    "GLBA Safeguards Rule",
-    "NYDFS Part 500"
-   ],
-   "makesOffer": [
-    {
-     "@type": "Offer",
-     "name": "Deal-Unblock Sprint",
-     "price": "3500",
-     "priceCurrency": "USD",
-     "url": "https://ineedaciso.com/#sprint"
-    },
+   "offers": [
     {
      "@type": "Offer",
      "name": "Readiness Assessment",
      "price": "6500",
      "priceCurrency": "USD",
-     "url": "https://ineedaciso.com/#assessment"
-    },
-    {
-     "@type": "Offer",
-     "name": "Program Implementation",
-     "price": "30000",
-     "priceCurrency": "USD",
-     "url": "https://ineedaciso.com/#implementation"
+     "url": "https://ineedaciso.com/hipaa.html#fees"
     }
    ]
   },
   {
-   "@type": "Person",
-   "@id": "https://ineedaciso.com/#jason",
-   "name": "Jason Hamilton",
-   "jobTitle": "Founder and Virtual CISO",
-   "worksFor": {
-    "@id": "https://ineedaciso.com/#org"
-   },
-   "image": "https://ineedaciso.com/portrait.jpg",
-   "sameAs": [
-    "https://www.linkedin.com/in/jasonshamilton"
-   ],
-   "hasCredential": [
+   "@type": "FAQPage",
+   "mainEntity": [
     {
-     "@type": "EducationalOccupationalCredential",
-     "name": "CISSP — Certified Information Systems Security Professional"
+     "@type": "Question",
+     "name": "Is there a HIPAA certification?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. HHS does not certify or endorse HIPAA compliance, and private “certifications” are not recognized by HHS. What holds up is a documented risk analysis, safeguards that match it, and evidence that they operate."
+     }
     },
     {
-     "@type": "EducationalOccupationalCredential",
-     "name": "CISA — Certified Information Systems Auditor"
+     "@type": "Question",
+     "name": "We’re a software company, not a hospital. Does HIPAA apply?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "If you handle protected health information on behalf of a covered entity, you are a business associate and the Security Rule applies to you directly, along with the terms of your business associate agreements."
+     }
     },
     {
-     "@type": "EducationalOccupationalCredential",
-     "name": "GSLC — GIAC Security Leadership Certification"
+     "@type": "Question",
+     "name": "How often should the risk analysis be updated?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Whenever your environment changes in a way that affects risk, such as new systems, vendors, or locations, and on a regular review cycle. Many organizations review it at least annually."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do you provide legal advice on HIPAA?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. I handle the security program. Questions about privacy obligations, breach notification decisions, or contract terms should go to your healthcare counsel."
+     }
     }
    ]
-  },
-  {
-   "@type": "WebSite",
-   "@id": "https://ineedaciso.com/#website",
-   "name": "INeedACISO",
-   "url": "https://ineedaciso.com/",
-   "publisher": {
-    "@id": "https://ineedaciso.com/#org"
-   }
   }
  ]
 }
 </script>
+<!-- Booking + engagement signals for GTM: /assets/js/booking.js -->
+<script src="/assets/js/booking.js" defer></script>
+<!-- Published prices live in one file: /assets/js/pricing.js -->
+<script src="/assets/js/pricing.js" defer></script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -373,27 +382,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <img src="/assets/logo/logo-lockup-reverse.svg" alt="INeedACISO" width="4383" height="1749">
     </a>
     <div class="nav-links">
-      <a href="#services">Services</a>
+      <a href="/#services">Services</a>
       <a href="/virtual-ciso.html">Virtual CISO</a>
-      <a href="#frameworks">Frameworks</a>
-      <a href="#industries">Who I work with</a>
-      <a href="#about">About</a>
-      <a href="#products">Guides</a>
+      <a href="/compliance.html">Frameworks</a>
+      <a href="/#industries">Who I work with</a>
+      <a href="/#about">About</a>
+      <a href="/#products">Guides</a>
     </div>
     <a class="nav-cta" href="#book">Book a call</a>
   </div>
 </nav>
 
 <main id="main">
-
 <header class="hero on-dark">
   <div class="wrap">
-    <span class="clause">Fractional and virtual CISO</span>
-    <h1>Security leadership for companies that just got asked to prove it.</h1>
-    <p class="sub">Virtual CISO leadership and security compliance programs, whichever framework you face, built to hold up when a customer, an auditor, or a regulator looks closely.</p>
+    <ol class="crumbs"><li><a href="/">Home</a></li><li><a href="/compliance.html">Frameworks</a></li><li aria-current="page">HIPAA</li></ol>
+    <span class="clause">Compliance · HIPAA</span>
+    <h1>HIPAA security for covered entities and the vendors who serve them.</h1>
+    <p class="sub">The Security Rule asks for a documented risk analysis, safeguards that match it, and evidence that they run. I build all three, sized to your organization.</p>
     <div class="btns">
       <a class="btn btn-solid" href="#book">Book a discovery call</a>
-      <a class="btn btn-ghost" href="#process">See how engagements work</a>
+      <a class="btn btn-ghost" href="#fees">See the fixed fees</a>
     </div>
     <ul class="creds">
       <li>CISSP</li><li>CISA</li><li>GSLC</li>
@@ -404,236 +413,121 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </header>
 
-<section class="sec" id="services">
+<section class="sec" id="when">
   <div class="wrap sec-grid">
     <div>
-      <span class="clause">01 — Services</span>
-      <h2>What I'm usually called in for</h2>
-      <p class="lede">Three situations account for most engagements. If yours looks like one of these, we should talk.</p>
-    </div>
-    <div class="rows">
-      <article class="row">
-        <h3>A compliance deadline you can't miss</h3>
-        <p>A framework has become a condition of doing business. I build the program end to end — risk analysis, policies, controls, and the evidence to back them up — so it survives the first serious look.</p>
-        <p class="tags"><a href="/soc-2.html">SOC 2</a> · <a href="/iso-27001.html">ISO 27001</a> · <a href="/hipaa.html">HIPAA</a> · <a href="/cmmc.html">CMMC / NIST 800-171</a> · <a href="/pci-dss.html">PCI DSS</a> · <a href="/nist-csf.html">NIST CSF</a> · <a href="/glba-safeguards-rule.html">GLBA / FTC Safeguards</a></p>
-        <p class="offer-link" data-offer>Start with a <a href="#assessment">Readiness Assessment</a> (<span data-price="assessment">$6,500</span> fixed), then a <a href="#implementation">Program Implementation</a>.</p>
-      </article>
-      <article class="row">
-        <h3>A deal blocked by a security review</h3>
-        <p>An enterprise customer sent a questionnaire and the answers aren't there yet. I organize the evidence, answer what's answerable, and close the gaps that are holding up signature.</p>
-        <p class="tags">Questionnaires · Diligence · Evidence packages · <a href="/saas-security-review.html">For SaaS companies</a></p>
-        <p class="offer-link" data-offer>Fixed-fee option: the <a href="#sprint">Deal-Unblock Sprint</a>, <span data-price="sprint">$3,500</span>.</p>
-      </article>
-      <article class="row">
-        <h3>Security leadership you can't yet hire</h3>
-        <p>You need someone accountable for the security program without carrying a full-time executive. A virtual CISO on retainer covers the roadmap, vendor risk, and board and customer reporting.</p>
-        <p class="tags">Fractional CISO · Virtual CISO (vCISO) retainer</p>
-        <p class="tags"><a href="/virtual-ciso.html">Retainers start at <span data-price="advisory">$2,000</span>/month — see what each tier includes</a></p>
-      </article>
-      <p class="price-note"><strong>What it costs:</strong> vCISO retainers run <span data-price="advisory">$2,000</span>, <span data-price="core">$6,500</span>, or <span data-price="embedded">$12,000</span> per month depending on scope, billed monthly against a written scope of services. Project work such as a framework implementation is quoted as a fixed fee. <a href="/virtual-ciso.html#pricing">See the tiers</a>.</p>
-    </div>
-  </div>
-  <div class="wrap">
-      <div class="offers" id="offers" data-offer>
-        <h3 class="offers-h">Fixed-fee starting points</h3>
-        <p class="offers-lede">A paid first step with a defined result and a set price, before any retainer.</p>
-        <div class="offer-grid">
-          <article class="offer" id="sprint">
-            <h4>Deal-Unblock Sprint</h4>
-            <p class="o-fee"><span data-price="sprint">$3,500</span><span class="per"> fixed</span></p>
-            <p class="promise">One stalled security questionnaire answered in 10 business days.</p>
-            <ul>
-              <li>The completed questionnaire</li>
-              <li>A reusable evidence pack for the next one</li>
-              <li>A gap list with fixes ranked</li>
-            </ul>
-            <a class="btn btn-solid" href="#book" data-cta="My deal is stuck">My deal is stuck</a>
-          </article>
-          <article class="offer" id="assessment">
-            <h4>Readiness Assessment</h4>
-            <p class="o-fee"><span data-price="assessment">$6,500</span><span class="per"> fixed</span></p>
-            <p class="promise">Know exactly where you stand against one framework, with a 90-day plan.</p>
-            <ul>
-              <li>Gap report against one framework, such as SOC 2, ISO 27001, the GLBA Safeguards Rule, NYDFS Part 500, or studio vendor and TPN requirements</li>
-              <li>Risk summary</li>
-              <li>90-day roadmap</li>
-              <li>Readout call</li>
-            </ul>
-            <p class="credit">100% of the assessment fee is credited toward an implementation signed within 30 days.</p>
-            <a class="btn btn-solid" href="#book" data-cta="Start with an assessment">Start with an assessment</a>
-          </article>
-          <article class="offer" id="implementation">
-            <h4>Program Implementation</h4>
-            <p class="o-fee"><span class="per">From </span><span data-price="implementation">$30,000</span><span class="per"> fixed</span></p>
-            <p class="promise">ISO 27001 or SOC 2 built and audit-ready.</p>
-            <ul>
-              <li>Scope and gap assessment</li>
-              <li>Risk assessment and treatment</li>
-              <li>Policies, procedures, and controls written for how you operate</li>
-              <li>Internal audit and management review</li>
-              <li>Support through the certification or attestation audit</li>
-            </ul>
-            <a class="btn btn-solid" href="#book" data-cta="Book an ISO 27001 / SOC 2 call">Book an ISO 27001 / SOC 2 call</a>
-          </article>
-        </div>
-      </div>
-  </div>
-</section>
-
-<section class="sec sec-mist" id="frameworks">
-  <div class="wrap sec-grid">
-    <div>
-      <span class="clause">02 — Frameworks</span>
-      <h2>Every major framework, one way of working</h2>
-      <p class="lede">Different requirements, the same discipline: what you&rsquo;re actually obligated to do, a ranked gap assessment, controls written for how you operate, and evidence that holds up.</p>
+      <span class="clause">01 — When it comes up</span>
+      <h2>Why companies call me about HIPAA</h2>
+      <p class="lede">HIPAA applies to more organizations than most expect, and the first serious request usually comes from a customer rather than a regulator.</p>
     </div>
     <div>
-      <div class="fw-grid">
-        <a class="fw-card" href="/soc-2.html">
-          <h3>SOC 2</h3>
-          <p>For B2B SaaS and service companies whose enterprise customers want an independent report on their controls.</p>
-        </a>
-        <a class="fw-card" href="/iso-27001.html">
-          <h3>ISO 27001</h3>
-          <p>For companies selling internationally or to buyers who require an accredited certificate for the ISMS.</p>
-        </a>
-        <a class="fw-card" href="/hipaa.html">
-          <h3>HIPAA</h3>
-          <p>For healthcare providers, health plans, and the software and service vendors that handle their patient data.</p>
-        </a>
-        <a class="fw-card" href="/cmmc.html">
-          <h3>CMMC / NIST 800-171</h3>
-          <p>For defense contractors and subcontractors that handle federal contract information or controlled unclassified information.</p>
-        </a>
-        <a class="fw-card" href="/pci-dss.html">
-          <h3>PCI DSS</h3>
-          <p>For merchants and service providers that store, process, or transmit payment card data, or can affect its security.</p>
-        </a>
-        <a class="fw-card" href="/nist-csf.html">
-          <h3>NIST CSF</h3>
-          <p>For companies that need a defensible security program and a common language for boards, insurers, and customers.</p>
-        </a>
-        <a class="fw-card" href="/glba-safeguards-rule.html">
-          <h3>GLBA / FTC Safeguards</h3>
-          <p>For mortgage lenders and brokers, fintechs, auto dealers that arrange financing, tax preparers, and other non-bank financial institutions.</p>
-        </a>
-      </div>
-      <p class="price-note" style="margin-top:1.4rem" data-offer><strong>Not sure where you stand?</strong> Start with a <a href="#assessment">Readiness Assessment</a> (<span data-price="assessment">$6,500</span> fixed) against one framework; 100% of the fee is credited toward an implementation signed within 30 days. Certification and attestation are issued by independent auditors and certification bodies; my role is getting you ready to pass.</p>
-      <div class="sec-cta">
-        <a class="btn btn-solid" href="/compliance.html">How each framework works</a>
-      </div>
+<div class="rows">
+      <article class="row">
+        <h3>A hospital or health plan sent a vendor review</h3>
+        <p>If you create, receive, maintain, or transmit protected health information for a covered entity, you are a business associate. The Security Rule applies to you directly, and your customer will ask you to prove it.</p>
+      </article>
+      <article class="row">
+        <h3>You have never done a formal risk analysis</h3>
+        <p>A security risk analysis is required, and inadequate risk analysis is among the most commonly cited failures in HHS Office for Civil Rights enforcement actions.</p>
+      </article>
+      <article class="row">
+        <h3>Something went wrong</h3>
+        <p>A lost laptop, a phishing compromise, or a ransomware event raises questions about breach notification, and about whether the safeguards you had were the ones your risk analysis called for.</p>
+      </article>
+</div>
     </div>
   </div>
 </section>
 
-<section class="sec" id="industries">
+<section class="sec sec-mist" id="how">
   <div class="wrap sec-grid">
     <div>
-      <span class="clause">03 — Who I work with</span>
-      <h2>Regulated, growing companies</h2>
-      <p class="lede">Most clients have between 20 and 1,000 people and a requirement they haven&rsquo;t had to meet before.</p>
+      <span class="clause">02 — How the work runs</span>
+      <h2>How I build it</h2>
+      <p class="lede">Built from the risk analysis outward, so every safeguard can be traced to a reason.</p>
     </div>
     <div>
-      <div class="fw-grid">
-        <a class="fw-card" href="/financial-services.html">
-          <h3>Financial services</h3>
-          <p>Mortgage lenders, fintechs, credit unions, and their service providers facing examiners, bank partners, and investors.</p>
-          <span class="go">GLBA · NYDFS · FFIEC · SOC 2 &rarr;</span>
-        </a>
-        <a class="fw-card" href="/saas-security-review.html">
-          <h3>B2B SaaS and tech services</h3>
-          <p>Enterprise deals stuck in security review, and the SOC 2 or ISO 27001 program that stops it happening again.</p>
-          <span class="go">Questionnaires · SOC 2 · ISO 27001 &rarr;</span>
-        </a>
-      </div>
-      <p class="price-note" style="margin-top:1.4rem">Also healthcare organizations and their vendors (<a href="/hipaa.html">HIPAA</a>), defense contractors (<a href="/cmmc.html">CMMC</a>), and merchants (<a href="/pci-dss.html">PCI DSS</a>).</p>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="process">
-  <div class="wrap sec-grid">
-    <div>
-      <span class="clause">04 — Process</span>
-      <h2>How engagements work</h2>
-      <p class="lede">No open-ended hourly arrangements. Scope and price are agreed before work starts.</p>
-    </div>
-    <div>
+      <div class="note"><strong>Status, October 2026.</strong> HHS proposed a major update to the Security Rule in January 2025, and it has not been finalized. The current Security Rule remains in force. The program I build meets today&rsquo;s rule and is structured to absorb the update when it arrives.</div>
       <div class="step">
         <span class="step-n">01</span>
         <div>
-          <h3>Discovery call</h3>
-          <p>Thirty minutes. What's driving the deadline, what's already in place, and what you're actually obligated to do — which is often narrower than you've been told.</p>
+          <h3>Map where ePHI lives</h3>
+          <p>Systems, vendors, devices, and data flows that create, receive, store, or transmit electronic protected health information.</p>
         </div>
       </div>
       <div class="step">
         <span class="step-n">02</span>
         <div>
-          <h3>Written scope of work</h3>
-          <p>A fixed fee against defined deliverables, each with a stated completion standard. You know what you're getting and what it costs before anyone signs.</p>
+          <h3>Security risk analysis</h3>
+          <p>Threats, vulnerabilities, likelihood, and impact for each system, documented the way the Security Rule and HHS guidance expect.</p>
         </div>
       </div>
       <div class="step">
         <span class="step-n">03</span>
         <div>
-          <h3>Built, documented, handed over</h3>
-          <p>The program is yours to run when I'm done — editable policies, a live risk register, and a compliance calendar. Retainer support afterward is optional, not assumed.</p>
+          <h3>Risk management plan</h3>
+          <p>What you will do about each significant risk, who owns it, and when. Addressable specifications aren&rsquo;t optional: each one needs an implemented safeguard or a documented reason for an alternative.</p>
         </div>
       </div>
-      <p class="price-note">Every engagement is scoped and priced to what the situation actually requires. Retainers are scoped separately.</p>
-      <p class="price-note"><strong>How I handle your data:</strong> I use business AI tools that don&rsquo;t train on client data, and every deliverable gets a human review from me before it reaches you.</p>
+      <div class="step">
+        <span class="step-n">04</span>
+        <div>
+          <h3>Safeguards and policies</h3>
+          <p>Administrative, physical, and technical safeguards, with policies and procedures written for your actual operations.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-n">05</span>
+        <div>
+          <h3>Business associate agreements, training, and incident response</h3>
+          <p>BAAs with your vendors, workforce training, and a breach response process that meets notification timelines.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="sec" id="about">
-  <div class="wrap sec-grid">
-    <div>
-      <span class="clause">05 — Background</span>
-      <h2>Who you'd be working with</h2>
-      <img class="portrait" src="portrait.jpg" width="640" height="640" loading="lazy"
-           alt="Jason Hamilton, founder of INeedACISO">
+<section class="sec" id="fees">
+  <div class="wrap">
+    <span class="clause">03 — Fixed fees</span>
+    <h2>What it costs</h2>
+    <p class="lede">Fixed fees, agreed in writing before work starts.</p>
+    <div class="offer-grid inline-offers two">
+          <article class="offer">
+            <h4>Readiness Assessment</h4>
+            <p class="o-fee"><span data-price="assessment">$6,500</span><span class="per"> fixed</span></p>
+            <p class="promise">Know exactly where you stand against one framework, with a 90-day plan.</p>
+            <ul><li>HIPAA security risk analysis, documented</li><li>Gap report against the Security Rule safeguards</li><li>90-day risk management plan</li><li>Readout call</li></ul>
+            <p class="credit">100% of the assessment fee is credited toward an implementation signed within 30 days.</p>
+            <a class="btn btn-solid" href="#book" data-cta="Start with an assessment">Start with an assessment</a>
+          </article>
+          <article class="offer">
+            <h4>Virtual CISO retainer</h4>
+            <p class="o-fee"><span class="per">From </span><span data-price="advisory">$2,000</span><span class="per"> / month</span></p>
+            <p class="promise">Someone accountable for running the program after it is built.</p>
+            <ul><li>Keeps the risk analysis and policies current</li><li>Reviews vendors and BAAs</li><li>Leads incident and breach response</li></ul>
+            <a class="btn btn-solid" href="/virtual-ciso.html#pricing">See the retainer tiers</a>
+          </article>
     </div>
-    <div class="bio">
-      <p>I'm <strong>Jason Hamilton</strong>. I've spent 30 years in IT and security, with security leadership roles across financial services, healthcare, technology, and defense — building and running programs in regulated environments where the work has to hold up under outside scrutiny.</p>
-      <p>Most of my work is with small and mid-sized companies facing a requirement they haven't had to meet before. They rarely need a scaled-down enterprise program. They need the parts that carry real weight, documented well enough to defend, and nothing they'll never use.</p>
-      <p>I've worked across the major regulatory and security frameworks. Whatever standard is in front of you, the conversation starts the same way: what are you actually obligated to do, and what will it take to prove it.</p>
-    </div>
+    <p class="price-note" style="margin-top:1.4rem"><strong>Implementation:</strong> once the assessment defines the scope, building the safeguards, policies, and evidence is quoted as a fixed fee, never hourly.</p>
   </div>
 </section>
 
-<section class="sec sec-mist" id="products">
+<section class="sec sec-mist" id="faq">
   <div class="wrap sec-grid">
     <div>
-      <span class="clause">06 — Guides</span>
-      <h2>Start smaller</h2>
-      <p class="lede">Not ready for an engagement? The same guidance, written down for you to work through yourself.</p>
+      <span class="clause">04 — Questions</span>
+      <h2>Common questions</h2>
+      <p class="lede">Straight answers to what clients usually ask first. Anything else, bring it to the call.</p>
     </div>
     <div>
-      <a class="prod" href="cybersecurity-guide.html">
-        <span class="prod-spine" aria-hidden="true"></span>
-        <span>
-          <h3>SMB Cybersecurity Guide</h3>
-          <p>Forty pages on where to start when nobody in the building owns security yet.</p>
-          <span class="price">$27</span>
-        </span>
-      </a>
-      <a class="prod" href="compliance-playbook.html">
-        <span class="prod-spine alt" aria-hidden="true"></span>
-        <span>
-          <h3>Small Business Compliance Playbook</h3>
-          <p>167 pages. The full program, structured so you can build it without me.</p>
-          <span class="price">$297</span>
-        </span>
-      </a>
-      <a class="prod" href="breach-response.html">
-        <span class="prod-spine" aria-hidden="true"></span>
-        <span>
-          <h3>You've Been Breached Bundle</h3>
-          <p>What to do in the first 72 hours, and who to call in what order.</p>
-          <span class="price">$27</span>
-        </span>
-      </a>
+<div class="faq">
+  <details><summary>Is there a HIPAA certification?</summary><p>No. HHS does not certify or endorse HIPAA compliance, and private &ldquo;certifications&rdquo; are not recognized by HHS. What holds up is a documented risk analysis, safeguards that match it, and evidence that they operate.</p></details>
+  <details><summary>We&rsquo;re a software company, not a hospital. Does HIPAA apply?</summary><p>If you handle protected health information on behalf of a covered entity, you are a business associate and the Security Rule applies to you directly, along with the terms of your business associate agreements.</p></details>
+  <details><summary>How often should the risk analysis be updated?</summary><p>Whenever your environment changes in a way that affects risk, such as new systems, vendors, or locations, and on a regular review cycle. Many organizations review it at least annually.</p></details>
+  <details><summary>Do you provide legal advice on HIPAA?</summary><p>No. I handle the security program. Questions about privacy obligations, breach notification decisions, or contract terms should go to your healthcare counsel.</p></details>
+</div>
+      <ul class="related"><li><a href="/compliance.html">All frameworks</a></li><li><a href="/nist-csf.html">NIST CSF</a></li><li><a href="/soc-2.html">SOC 2</a></li></ul>
     </div>
   </div>
 </section>
@@ -649,7 +543,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="cal-alt">Prefer email? <a href="mailto:jason@ineedaciso.com?subject=vCISO%20inquiry">jason@ineedaciso.com</a></p>
   </div>
 </section>
-
 </main>
 
 <footer class="foot">
